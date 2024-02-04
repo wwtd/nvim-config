@@ -43,8 +43,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"RRethy/nvim-base16",
-	lazy = true,
+	{
+		"RRethy/nvim-base16",
+		lazy = true,
+	},
+	{
+    		'nvim-telescope/telescope.nvim', tag = '0.1.5',
+-- or                              , branch = '0.1.x',
+      		dependencies = { 'nvim-lua/plenary.nvim' },
+		cmd = "Telescope",
+    	},
 })
 
 vim.cmd.colorscheme("base16-tender")
